@@ -6,6 +6,14 @@ mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 RESOURCES_TO_COPY=${PODS_ROOT}/resources-to-copy-${TARGETNAME}.txt
 > "$RESOURCES_TO_COPY"
 
+XCASSET_FILES=()
+
+realpath() {
+  DIRECTORY=$(cd "${1%/*}" && pwd)
+  FILENAME="${1##*/}"
+  echo "$DIRECTORY/$FILENAME"
+}
+
 install_resource()
 {
   case $1 in
@@ -31,7 +39,13 @@ install_resource()
       echo "xcrun momc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd\""
       xcrun momc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcdatamodeld`.momd"
       ;;
+    *.xcmappingmodel)
+      echo "xcrun mapc \"${PODS_ROOT}/$1\" \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcmappingmodel`.cdm\""
+      xcrun mapc "${PODS_ROOT}/$1" "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename "$1" .xcmappingmodel`.cdm"
+      ;;
     *.xcassets)
+      ABSOLUTE_XCASSET_FILE=$(realpath "${PODS_ROOT}/$1")
+      XCASSET_FILES+=("$ABSOLUTE_XCASSET_FILE")
       ;;
     /*)
       echo "$1"
@@ -43,45 +57,46 @@ install_resource()
       ;;
   esac
 }
-          install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerChecked.imageset/CTAssetsPickerChecked.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerChecked.imageset/CTAssetsPickerChecked@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerChecked.imageset/CTAssetsPickerChecked@3x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyAsset.imageset/CTAssetsPickerEmptyAsset.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyAsset.imageset/CTAssetsPickerEmptyAsset@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyAsset.imageset/CTAssetsPickerEmptyAsset@3x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyCell.imageset/CTAssetsPickerEmptyCell.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyCell.imageset/CTAssetsPickerEmptyCell@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerEmptyCell.imageset/CTAssetsPickerEmptyCell@3x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerLocked.imageset/UIAccessDeniedViewLock.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerLocked.imageset/UIAccessDeniedViewLock@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerLocked.imageset/UIAccessDeniedViewLock@3x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerPlay.imageset/CTAssetsPickerPlay.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerPlay.imageset/CTAssetsPickerPlay@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerPlay.imageset/CTAssetsPickerPlay@3x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerVideo.imageset/CTAssetsPickerVideo.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerVideo.imageset/CTAssetsPickerVideo@2x.png"
-                    install_resource "CTAssetsPickerController/CTAssetsPickerController/CTAssetsPicker.xcassets/CTAssetsPickerVideo.imageset/CTAssetsPickerVideo@3x.png"
-                    install_resource "MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/UMSocialSDKResourcesNew.bundle"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSCommentDetailController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSCommentInputController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSCommentInputControlleriPad.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMShareEditViewController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMShareEditViewControlleriPad.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSLoginViewController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSnsAccountViewController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/SocialSDKXib/UMSShareListController.xib"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/en.lproj"
-                    install_resource "UMengSocial/umeng_ios_social_sdk_4.2.1_arm64_custom/UMSocial_Sdk_4.2.1/zh-Hans.lproj"
-          
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentDetailController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputControlleriPad.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewControlleriPad.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSLoginViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSnsAccountViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSShareListController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/en.lproj"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/zh-Hans.lproj"
+  install_resource "${BUILT_PRODUCTS_DIR}/CTAssetsPickerController.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "MWPhotoBrowser/MWPhotoBrowser/MWPhotoBrowser.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentDetailController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputControlleriPad.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewControlleriPad.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSLoginViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSnsAccountViewController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSShareListController.xib"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/en.lproj"
+  install_resource "UMengSocial/umeng_ios_social_sdk_4.2.3_arm64_custom/UMSocial_Sdk_4.2.3/zh-Hans.lproj"
+  install_resource "${BUILT_PRODUCTS_DIR}/CTAssetsPickerController.bundle"
+fi
+
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 if [[ "${ACTION}" == "install" ]]; then
   rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi
 rm -f "$RESOURCES_TO_COPY"
 
-if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ `find . -name '*.xcassets' | wc -l` -ne 0 ]
+if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ -n "$XCASSET_FILES" ]
 then
   case "${TARGETED_DEVICE_FAMILY}" in
     1,2)
@@ -97,5 +112,14 @@ then
       TARGET_DEVICE_ARGS="--target-device mac"
       ;;
   esac
-  find "${PWD}" -name "*.xcassets" -print0 | xargs -0 actool --output-format human-readable-text --notices --warnings --platform "${PLATFORM_NAME}" --minimum-deployment-target "${IPHONEOS_DEPLOYMENT_TARGET}" ${TARGET_DEVICE_ARGS} --compress-pngs --compile "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+
+  # Find all other xcassets (this unfortunately includes those of path pods and other targets).
+  OTHER_XCASSETS=$(find "$PWD" -iname "*.xcassets" -type d)
+  while read line; do
+    if [[ $line != "`realpath $PODS_ROOT`*" ]]; then
+      XCASSET_FILES+=("$line")
+    fi
+  done <<<"$OTHER_XCASSETS"
+
+  printf "%s\0" "${XCASSET_FILES[@]}" | xargs -0 xcrun actool --output-format human-readable-text --notices --warnings --platform "${PLATFORM_NAME}" --minimum-deployment-target "${IPHONEOS_DEPLOYMENT_TARGET}" ${TARGET_DEVICE_ARGS} --compress-pngs --compile "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 fi

@@ -14,7 +14,7 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2013-2014 AFNetworking (http://afnetworking.com/)
+			<string>Copyright (c) 2011&#8211;2015 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -182,7 +182,7 @@ THE SOFTWARE.</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright © 2013 Markus Emrich
+			<string>Copyright &#169; 2013 Markus Emrich
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
@@ -214,7 +214,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright (c) 2013 Matej Bukovinski
+			<string>Copyright (c) 2009-2015 Matej Bukovinski
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -460,7 +460,7 @@ in your own software. Thanks.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2011 - 2014 UMeng.com. All rights reserved.
+			<string>Copyright 2011 - 2015 UMeng.com. All rights reserved.
 </string>
 			<key>Title</key>
 			<string>UMengAnalytics</string>
