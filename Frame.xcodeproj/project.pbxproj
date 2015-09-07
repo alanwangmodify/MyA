@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AEDB6781B9D8860006BAB45 /* ViolationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB6771B9D8860006BAB45 /* ViolationViewController.m */; };
+		1AEDB67D1B9D88A3006BAB45 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB67C1B9D88A3006BAB45 /* CarViewController.m */; };
+		1AEDB6801B9D88AC006BAB45 /* OilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB67F1B9D88AC006BAB45 /* OilViewController.m */; };
 		D47B67996742861AEF751CAF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23C99258A07317745A9D2535 /* libPods.a */; };
 		E634AB6E1A5BDAFB0099B675 /* PopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = E634AB6D1A5BDAFB0099B675 /* PopupView.m */; };
 		E634AB711A5BE4A90099B675 /* CMSelectActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = E634AB701A5BE4A90099B675 /* CMSelectActionSheet.m */; };
@@ -51,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AEDB6761B9D8860006BAB45 /* ViolationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationViewController.h; sourceTree = "<group>"; };
+		1AEDB6771B9D8860006BAB45 /* ViolationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationViewController.m; sourceTree = "<group>"; };
+		1AEDB67B1B9D88A3006BAB45 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		1AEDB67C1B9D88A3006BAB45 /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
+		1AEDB67E1B9D88AC006BAB45 /* OilViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OilViewController.h; sourceTree = "<group>"; };
+		1AEDB67F1B9D88AC006BAB45 /* OilViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OilViewController.m; sourceTree = "<group>"; };
 		23C99258A07317745A9D2535 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		598B22261250374F781D1194 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6112797B5C98C90798709028 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +155,33 @@
 			children = (
 			);
 			path = TipsPage;
+			sourceTree = "<group>";
+		};
+		1AEDB6751B9D8844006BAB45 /* Violation */ = {
+			isa = PBXGroup;
+			children = (
+				1AEDB6761B9D8860006BAB45 /* ViolationViewController.h */,
+				1AEDB6771B9D8860006BAB45 /* ViolationViewController.m */,
+			);
+			path = Violation;
+			sourceTree = "<group>";
+		};
+		1AEDB6791B9D888B006BAB45 /* Oil */ = {
+			isa = PBXGroup;
+			children = (
+				1AEDB67E1B9D88AC006BAB45 /* OilViewController.h */,
+				1AEDB67F1B9D88AC006BAB45 /* OilViewController.m */,
+			);
+			path = Oil;
+			sourceTree = "<group>";
+		};
+		1AEDB67A1B9D8898006BAB45 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				1AEDB67B1B9D88A3006BAB45 /* CarViewController.h */,
+				1AEDB67C1B9D88A3006BAB45 /* CarViewController.m */,
+			);
+			path = Car;
 			sourceTree = "<group>";
 		};
 		3E671D6793304C277DA56593 /* Frameworks */ = {
@@ -248,6 +284,9 @@
 		E677DD541A4FAF5C00A5CE8D = {
 			isa = PBXGroup;
 			children = (
+				1AEDB67A1B9D8898006BAB45 /* Car */,
+				1AEDB6791B9D888B006BAB45 /* Oil */,
+				1AEDB6751B9D8844006BAB45 /* Violation */,
 				E677DD5F1A4FAF5C00A5CE8D /* Frame */,
 				E63D501C1A5D510D0041C7CD /* ListView */,
 				18EF5E6A1B16E64D00BBE594 /* TipsPage */,
@@ -482,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AEDB6781B9D8860006BAB45 /* ViolationViewController.m in Sources */,
 				E634AB711A5BE4A90099B675 /* CMSelectActionSheet.m in Sources */,
 				E69CC8981A67960A00044AB3 /* ModelSwift.swift in Sources */,
 				E6A24E2E1A762EF7002BADF3 /* CatalogViewController.m in Sources */,
@@ -490,8 +530,10 @@
 				E638F6C61A53ECDF00B8F88D /* CommonRequest.m in Sources */,
 				E6A24E251A75E687002BADF3 /* MyFactory.m in Sources */,
 				E677DD661A4FAF5C00A5CE8D /* AppDelegate.m in Sources */,
+				1AEDB6801B9D88AC006BAB45 /* OilViewController.m in Sources */,
 				E66CBC7A1A527DE900D236F6 /* HomePageViewController.m in Sources */,
 				E677DD691A4FAF5C00A5CE8D /* Frame.xcdatamodeld in Sources */,
+				1AEDB67D1B9D88A3006BAB45 /* CarViewController.m in Sources */,
 				E634AB771A5BF8180099B675 /* MyLabel.m in Sources */,
 				E6F19E081A721983002F902C /* CommonServer.m in Sources */,
 				E677DD6C1A4FAF5C00A5CE8D /* ViewController.m in Sources */,

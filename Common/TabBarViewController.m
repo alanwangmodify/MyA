@@ -58,14 +58,24 @@
 	homePage.hidesBottomBarWhenPushed = YES ;
 	homePage.title = @"首页";
 	
-	HomePageViewController *homePage2 = [[HomePageViewController alloc] init];
-	homePage2.hidesBottomBarWhenPushed = YES ;
-	homePage2.title = @"第二页";
+	ViolationViewController *Violation = [[ViolationViewController alloc] init];
+	Violation.hidesBottomBarWhenPushed = YES ;
+	Violation.title = @"违章";
+    
+    OilViewController *oilVC = [[OilViewController alloc] init];
+    oilVC.hidesBottomBarWhenPushed = YES ;
+    oilVC.title = @"加油";
+    
+    CarViewController *carVC = [[CarViewController alloc] init];
+    carVC.hidesBottomBarWhenPushed = YES ;
+    carVC.title = @"车辆";
 	
 	UINavigationController *homePageNC = [[UINavigationController alloc] initWithRootViewController:homePage];
-	UINavigationController *homePage2NC = [[UINavigationController alloc] initWithRootViewController:homePage2];
+	UINavigationController *ViolationNC = [[UINavigationController alloc] initWithRootViewController:Violation];
+    UINavigationController *oilNC = [[UINavigationController alloc] initWithRootViewController:oilVC];
+    UINavigationController *carNC = [[UINavigationController alloc] initWithRootViewController:carVC];
 	
-	NSArray *vcs = @[homePageNC,homePage2NC];
+	NSArray *vcs = @[homePageNC,ViolationNC,oilNC,carNC];
 	self.viewControllers = vcs;	
 }
 

@@ -14,6 +14,9 @@
 #import "CatalogModel.h"
 #import "CatalogViewController.h"
 
-@interface HomePageViewController : ViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HomePageViewController : ViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+
+
+@property (nonatomic,strong) UICollectionView *collectionView;
 
 @end
