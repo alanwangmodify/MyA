@@ -43,8 +43,6 @@
 	
 }
 
-
-
 #pragma mark ================ tableView delegte datasource ====================
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return self.catalogModel.catalogs.count;
@@ -65,10 +63,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	
-
+    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) TabBarViewController *mainBarController;
 
++ (AppDelegate *)getAppDelegate;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

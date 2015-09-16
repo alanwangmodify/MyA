@@ -13,8 +13,9 @@
 #import "CityWeatherModel.h"
 #import "CatalogModel.h"
 #import "CatalogViewController.h"
+#import "QuestionTestViewController.h"
 
-@interface HomePageViewController : ViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface HomePageViewController : ViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 
 
 @property (nonatomic,strong) UICollectionView *collectionView;

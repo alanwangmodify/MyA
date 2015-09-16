@@ -24,10 +24,15 @@
 	[navigatonController setNavigationBarHidden:YES];
 	[self.window setRootViewController:navigatonController];
 }
+
++(AppDelegate *)getAppDelegate {
+    
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
 	//设置navigationbar
-	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 	
 	NSShadow *shadow = [NSShadow new];
@@ -38,8 +43,7 @@
 															NSShadowAttributeName: shadow
 															}];
 	
-	[[UIBarButtonItem appearance] setBackButtonBackgroundImage:[UIImage imageNamed:@"backButtonImg"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-	
+//	[[UIBarButtonItem appearance] setBackButtonBackgroundImage:[UIImage imageNamed:@"shangdaohang_bj"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
 	
 	//
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

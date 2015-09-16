@@ -288,7 +288,6 @@ class ModelSwift: NSObject {
 		lessThanTen(44) //func 不用显示说明
 		
 		
-		
 //		处理变量的可选值时,你可以在操作(比如方法、属性和子脚本)之前加?。如果?之前的 值
 //		是 nil,?后面的东西都会被忽略,并且整个表达式返回 nil。否则,?之后的东西都会被运行。
 //		在这两种情况下,整个表达式的值也是一个可选值。
@@ -306,19 +305,10 @@ class ModelSwift: NSObject {
 			case Jack, Queen, King
 			
 			func simpDescription () {
-				
 				println("dd")
 			}
-			
 		}
-		
-
-		
 	}//maintest
-	
-
-	
-
 }
 //	使用 class 和类名来创建一个类。类中属性的声明和常量、变量声明一样,唯一的区别就是 它们的上下文是类。同样,方法和函数声明也一样。
 

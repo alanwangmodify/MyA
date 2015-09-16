@@ -17,16 +17,11 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	self.view.backgroundColor  =[UIColor whiteColor];
-	
-	if(IS_OS_7_OR_LATER)
-	{
-		self.edgesForExtendedLayout = UIRectEdgeNone;
-		self.extendedLayoutIncludesOpaqueBars  = YES;
-		self.automaticallyAdjustsScrollViewInsets = NO;
-		
-	}
-	
+	self.view.backgroundColor  = MyBackColor;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars  = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
 }
 
 - (void)didReceiveMemoryWarning {

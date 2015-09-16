@@ -15,11 +15,7 @@
 {
 	if ([self respondsToSelector:@selector(setBackgroundImage:forBarMetrics:)])
 	{
-		if (IS_OS_7_OR_LATER) {
-			[self setBackgroundImage:[UIImage imageNamed:@"choumei_nav_i7"] forBarMetrics:UIBarMetricsDefault];
-		}else{
-			[self setBackgroundImage:[UIImage imageNamed:@"choumei_nav"] forBarMetrics:UIBarMetricsDefault];
-		}
+		[self setBackgroundImage:[UIImage imageNamed:@"shangdaohang_bj"] forBarMetrics:UIBarMetricsDefault];
 
 		[self setBackgroundColor:[UIColor yellowColor]];
 
@@ -29,11 +25,7 @@
 - (void)drawRect:(CGRect)rect
 {
 	[self setBackgroundColor:[UIColor yellowColor]];
-	if (IS_OS_7_OR_LATER) {
-		[self setBackgroundImage:[UIImage imageNamed:@"choumei_nav_i7"] forBarMetrics:UIBarMetricsDefault];
-	}else{
-		[self setBackgroundImage:[UIImage imageNamed:@"choumei_nav"] forBarMetrics:UIBarMetricsDefault];
-	}
+	[self setBackgroundImage:[UIImage imageNamed:@"shangdaohang_bj"] forBarMetrics:UIBarMetricsDefault];
 	
 }
 
@@ -52,7 +44,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
 	
 	HomePageViewController *homePage = [[HomePageViewController alloc] init];
 	homePage.hidesBottomBarWhenPushed = YES ;

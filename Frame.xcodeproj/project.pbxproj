@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AAF76461B9ED90B0025C37F /* QuestionTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF76451B9ED90B0025C37F /* QuestionTestViewController.m */; };
+		1ABB89881BA7B764004CD039 /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB89871BA7B764004CD039 /* QuestionCell.m */; };
+		1AC149621BA9076D00AFA34A /* DataBaseManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC1495F1BA9076D00AFA34A /* DataBaseManage.m */; };
+		1AC149691BA90C3000AFA34A /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC149681BA90C3000AFA34A /* HUDHelper.m */; };
 		1AEDB6781B9D8860006BAB45 /* ViolationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB6771B9D8860006BAB45 /* ViolationViewController.m */; };
 		1AEDB67D1B9D88A3006BAB45 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB67C1B9D88A3006BAB45 /* CarViewController.m */; };
 		1AEDB6801B9D88AC006BAB45 /* OilViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEDB67F1B9D88AC006BAB45 /* OilViewController.m */; };
@@ -54,6 +58,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AAF76441B9ED90B0025C37F /* QuestionTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTestViewController.h; sourceTree = "<group>"; };
+		1AAF76451B9ED90B0025C37F /* QuestionTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTestViewController.m; sourceTree = "<group>"; };
+		1ABB89861BA7B764004CD039 /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		1ABB89871BA7B764004CD039 /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		1AC1495E1BA9076D00AFA34A /* DataBaseManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManage.h; sourceTree = "<group>"; };
+		1AC1495F1BA9076D00AFA34A /* DataBaseManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManage.m; sourceTree = "<group>"; };
+		1AC149671BA90C3000AFA34A /* HUDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHelper.h; sourceTree = "<group>"; };
+		1AC149681BA90C3000AFA34A /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
 		1AEDB6761B9D8860006BAB45 /* ViolationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViolationViewController.h; sourceTree = "<group>"; };
 		1AEDB6771B9D8860006BAB45 /* ViolationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViolationViewController.m; sourceTree = "<group>"; };
 		1AEDB67B1B9D88A3006BAB45 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
@@ -238,20 +250,24 @@
 		E66CBC771A527DE900D236F6 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				E6A24E2C1A762EF7002BADF3 /* CatalogViewController.h */,
+				E6A24E2D1A762EF7002BADF3 /* CatalogViewController.m */,
+				E6A24E2F1A763C9A002BADF3 /* QuestionDetailViewController.h */,
+				E6A24E301A763C9A002BADF3 /* QuestionDetailViewController.m */,
+				E690CC4B1A6395E0003AC338 /* DetailViewController.h */,
+				E690CC4C1A6395E0003AC338 /* DetailViewController.m */,
 				E6A24E261A75F0DD002BADF3 /* CityWeatherModel.h */,
 				E6A24E271A75F0DD002BADF3 /* CityWeatherModel.m */,
 				E6A24E291A761401002BADF3 /* CatalogModel.h */,
 				E6A24E2A1A761401002BADF3 /* CatalogModel.m */,
 				E66CBC781A527DE900D236F6 /* HomePageViewController.h */,
 				E66CBC791A527DE900D236F6 /* HomePageViewController.m */,
-				E6A24E2C1A762EF7002BADF3 /* CatalogViewController.h */,
-				E6A24E2D1A762EF7002BADF3 /* CatalogViewController.m */,
-				E6A24E2F1A763C9A002BADF3 /* QuestionDetailViewController.h */,
 				E6A24E321A763FBD002BADF3 /* QuestionModel.h */,
 				E6A24E331A763FBD002BADF3 /* QuestionModel.m */,
-				E6A24E301A763C9A002BADF3 /* QuestionDetailViewController.m */,
-				E690CC4B1A6395E0003AC338 /* DetailViewController.h */,
-				E690CC4C1A6395E0003AC338 /* DetailViewController.m */,
+				1ABB89861BA7B764004CD039 /* QuestionCell.h */,
+				1ABB89871BA7B764004CD039 /* QuestionCell.m */,
+				1AAF76441B9ED90B0025C37F /* QuestionTestViewController.h */,
+				1AAF76451B9ED90B0025C37F /* QuestionTestViewController.m */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -259,6 +275,10 @@
 		E66CBC7B1A52819800D236F6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1AC1495E1BA9076D00AFA34A /* DataBaseManage.h */,
+				1AC1495F1BA9076D00AFA34A /* DataBaseManage.m */,
+				1AC149671BA90C3000AFA34A /* HUDHelper.h */,
+				1AC149681BA90C3000AFA34A /* HUDHelper.m */,
 				E634AB6B1A5BDAB80099B675 /* CommonView */,
 				E634AB6F1A5BE4A90099B675 /* CMSelectActionSheet.h */,
 				E634AB701A5BE4A90099B675 /* CMSelectActionSheet.m */,
@@ -532,15 +552,19 @@
 				E677DD661A4FAF5C00A5CE8D /* AppDelegate.m in Sources */,
 				1AEDB6801B9D88AC006BAB45 /* OilViewController.m in Sources */,
 				E66CBC7A1A527DE900D236F6 /* HomePageViewController.m in Sources */,
+				1AC149691BA90C3000AFA34A /* HUDHelper.m in Sources */,
 				E677DD691A4FAF5C00A5CE8D /* Frame.xcdatamodeld in Sources */,
 				1AEDB67D1B9D88A3006BAB45 /* CarViewController.m in Sources */,
 				E634AB771A5BF8180099B675 /* MyLabel.m in Sources */,
 				E6F19E081A721983002F902C /* CommonServer.m in Sources */,
+				1AAF76461B9ED90B0025C37F /* QuestionTestViewController.m in Sources */,
 				E677DD6C1A4FAF5C00A5CE8D /* ViewController.m in Sources */,
+				1ABB89881BA7B764004CD039 /* QuestionCell.m in Sources */,
 				E634AB6E1A5BDAFB0099B675 /* PopupView.m in Sources */,
 				E690CC4D1A6395E0003AC338 /* DetailViewController.m in Sources */,
 				E6A24E311A763C9A002BADF3 /* QuestionDetailViewController.m in Sources */,
 				E634AB741A5BF7890099B675 /* MyButtion.m in Sources */,
+				1AC149621BA9076D00AFA34A /* DataBaseManage.m in Sources */,
 				E66CBC7E1A52819800D236F6 /* TabBarViewController.m in Sources */,
 				E677DD631A4FAF5C00A5CE8D /* main.m in Sources */,
 				E6A24E341A763FBD002BADF3 /* QuestionModel.m in Sources */,

@@ -20,10 +20,7 @@
 	[super viewDidLoad];
 	
 	MyNavigaitonBarButton *barBtn = [[MyNavigaitonBarButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-	
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barBtn];
 	
-	
-
 }
 @end
